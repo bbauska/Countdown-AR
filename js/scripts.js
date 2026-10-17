@@ -1,19 +1,1 @@
-/* /js/scripts.js in github Alternate-Reality-2 for AR-2.bauska.org */
-/* Nov 28, 2025 = 5,000 (xx hours approx)
-*/
-let counter = 0;  <!-- was 5000 + 6000 + 1250; -->
-/* 5,000 Nov 28, 2025
-  6,000 Dec 30, 2025
-  1,250 Feb 27, 2026
-  all times are approximate. */
 
-function count() {
-  counter++;
-  givenNumber = counter;
-  output = givenNumber.toLocaleString('en-US'); 
-  document.getElementById('number').innerHTML = output;
-}
-
-document.addEventListener('DOMContentLoaded', function(){
-  document.getElementById('clicker').onclick = count;
-})
