@@ -1,113 +1,70 @@
-/* css/styles.css in silus-counter-2 of silus-counter-2.bauska.org */
-/* confetti-container & more */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.back {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 700px;  /* 300%; */
-  background-color: rgba(218, 25, 233, .7);  /* medium violet */
-  border-radius: 30px;  /* 10px; */
-  box-shadow: 0 0 8px 0 rgb(3, 75, 85);  /* very dark cyan */
-  margin-top: 100px;
-}
-  
-#clicker {
-  width: 200px;
-  height: 50px;
-  border-radius: 10px;
-  box-shadow: 0 0 8px 0 rgb(255, 255, 185);  /* pale yellow */
-  background-color: rgba(10, 4, 90, 0.6);  /* very dark blue */
-  color: rgb(255, 255, 255);  /* white */
-  margin-bottom: 50px; /* 100px */
-  transition: 2s;
-}
-#clicker:hover {
-  animation-name: grow;
-  animation-duration: 60s;
-}
-
-h1 {
-  color: rgb(255, 255, 255);  /* white */
-  font-size: 64px;
-  justify-content: center;
-  letter-spacing: 0.1em;
-}
-h2 {
-  font-size: 32px;
-  justify-content: center;
-  color: rgb(255, 255, 255);  /* white */
-}
-h3 {
-  font-size: 26px;
-  justify-content; center;
-  background-color: #006700;  /* dark green */
-  color: rgb(200,200,200);  /* light gray */
-}
-h4 {
-  color: #006700;  /* dark green */
-  font-size: 14px;
-}
-
-@keyframes grow {
-  0% {transform: scale(1);}
-  25% {transform: scale(1.4);}
-  50% {transform: scale(1);}
-  75% {transform: scale(1.4);}
-  100% {transform: scale(1);}
-}
-
-#confetti-container {
-  position: absolute;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* ./css/styles.css of Alternate-Reality-2 for ar-2.bauska.org */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700");
+.hero {
+  background-color: #0040C1;
+  position: relative;
   height: 100vh;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
 }
 
-.card {
-  background-color: #ffffff;  /* white */
-  max-width: 700px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  /* black */
-  padding: 2rem;
-}
-.card p {
-  font-size: 1.2rem;
-  text-align: center;
-  margin: 0;
-  padding: 10px;
-}
-.confetti {
+.hero__title {
+  color: #fff;
   position: absolute;
-  top: 0;
-  font-size: 1.3rem;  /* 1.6 */
-  animation: confetti-fall linear 5s infinite;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  z-index: 1;
 }
 
-@keyframes confetti-fall {
-  0% {
-    transform: translateY(-100%) rotate(0);
-  }
-  100% {
-    transform: translateY(100vh) rotate(360deg);
-  }
+.cube {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #003298;
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  animation: cube 12s ease-in forwards infinite;
 }
-/* shadow/confetti */
-button {
-  margin-bottom: 10px;
-  display: block;
+.cube:nth-child(2n) {
+  border-color: #0051f4;
 }
-canvas {
-  width: 700px;  /* 500px; */
-  height: 300px;
-  border: 1px solid #0000ff;  /* pure blue */
+.cube:nth-child(2) {
+  animation-delay: 2s;
+  left: 25vw;
+  top: 40vh;
+}
+.cube:nth-child(3) {
+  animation-delay: 4s;
+  left: 75vw;
+  top: 50vh;
+}
+.cube:nth-child(4) {
+  animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+.cube:nth-child(5) {
+  animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+.cube:nth-child(6) {
+  animation-delay: 10s;
+  left: 50vw;
+  top: 10vh;
+}
+
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
 }
